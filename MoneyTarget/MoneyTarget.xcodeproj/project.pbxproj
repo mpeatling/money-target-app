@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */; };
-		B61E3DB31F3CBE9D0039DFE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB21F3CBE9D0039DFE7 /* ViewController.swift */; };
+		B61E3DB31F3CBE9D0039DFE7 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */; };
 		B61E3DB61F3CBE9D0039DFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61E3DB41F3CBE9D0039DFE7 /* Main.storyboard */; };
 		B61E3DB91F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB71F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld */; };
 		B61E3DBB1F3CBE9D0039DFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61E3DBA1F3CBE9D0039DFE7 /* Assets.xcassets */; };
 		B61E3DBE1F3CBE9D0039DFE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61E3DBC1F3CBE9D0039DFE7 /* LaunchScreen.storyboard */; };
 		B61E3DC91F3CBE9D0039DFE7 /* MoneyTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DC81F3CBE9D0039DFE7 /* MoneyTargetTests.swift */; };
 		B61E3DD41F3CBE9D0039DFE7 /* MoneyTargetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DD31F3CBE9D0039DFE7 /* MoneyTargetUITests.swift */; };
+		B61E3DE21F3CC3CA0039DFE7 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		B61E3DAD1F3CBE9D0039DFE7 /* MoneyTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B61E3DB21F3CBE9D0039DFE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		B61E3DB51F3CBE9D0039DFE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B61E3DB81F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyTarget.xcdatamodel; sourceTree = "<group>"; };
 		B61E3DBA1F3CBE9D0039DFE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		B61E3DCF1F3CBE9D0039DFE7 /* MoneyTargetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyTargetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61E3DD31F3CBE9D0039DFE7 /* MoneyTargetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTargetUITests.swift; sourceTree = "<group>"; };
 		B61E3DD51F3CBE9D0039DFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */,
-				B61E3DB21F3CBE9D0039DFE7 /* ViewController.swift */,
+				B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */,
+				B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */,
 				B61E3DB41F3CBE9D0039DFE7 /* Main.storyboard */,
 				B61E3DBA1F3CBE9D0039DFE7 /* Assets.xcassets */,
 				B61E3DBC1F3CBE9D0039DFE7 /* LaunchScreen.storyboard */,
@@ -264,8 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61E3DB91F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld in Sources */,
-				B61E3DB31F3CBE9D0039DFE7 /* ViewController.swift in Sources */,
+				B61E3DB31F3CBE9D0039DFE7 /* GoalViewController.swift in Sources */,
 				B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */,
+				B61E3DE21F3CC3CA0039DFE7 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +518,7 @@
 				B61E3DDA1F3CBE9D0039DFE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B61E3DDB1F3CBE9D0039DFE7 /* Build configuration list for PBXNativeTarget "MoneyTargetTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				B61E3DDD1F3CBE9D0039DFE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B61E3DDE1F3CBE9D0039DFE7 /* Build configuration list for PBXNativeTarget "MoneyTargetUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				B61E3DE01F3CBE9D0039DFE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
