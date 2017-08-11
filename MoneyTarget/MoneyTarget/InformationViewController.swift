@@ -22,10 +22,13 @@ class InformationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-  
-    
-    @IBAction func saveButtonPressed(_ sender: Any) {
+    func setupDesign() {
+        self.numberOfHoursWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "35", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
+        self.numberOfTipsEarnedTextBox.attributedPlaceholder = NSAttributedString(string: "260", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
+        self.numberOfDaysWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "5", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
+
     }
+    
     
     
    
