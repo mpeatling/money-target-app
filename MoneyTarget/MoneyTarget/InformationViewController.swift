@@ -18,7 +18,7 @@ class InformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupDesign()
         // Do any additional setup after loading the view.
     }
 
