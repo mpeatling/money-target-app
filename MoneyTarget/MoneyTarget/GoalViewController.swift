@@ -18,7 +18,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDesign()
-        //self.enableOrDisableStartSavingButton()
+        self.enableOrDisableStartSavingButton()
     
     }
 
@@ -31,7 +31,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         self.timeframeTextBox.attributedPlaceholder = NSAttributedString(string: "Feb 5, 2018", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
         self.addDoneButtonOnKeyboard()
         self.setupDatePicker()
-        self.startSavingButton.isEnabled = false
+        self.enableOrDisableStartSavingButton()
         
     }
     
@@ -55,17 +55,17 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     
     func doneButtonAction() {
         self.goalAmountTextBox.resignFirstResponder()
-        self.startSavingButton.isEnabled = false
+        self.enableOrDisableStartSavingButton()
         
     }
 
-    //func enableOrDisableStartSavingButton() {
-    //    if self.goalAmountTextBox.text == "" && self.timeframeTextBox.text == "" {
-    //        self.startSavingButton.isEnabled = false
-    //    } else {
-    //        self.startSavingButton.isEnabled = true
-    //    }
-  //  }
+    func enableOrDisableStartSavingButton() {
+       if self.goalAmountTextBox.text == "" && self.timeframeTextBox.text == "" || self.goalAmountTextBox.text == "" || self.timeframeTextBox.text == "" {
+            self.startSavingButton.isEnabled = false
+        } else {
+            self.startSavingButton.isEnabled = true
+        }
+    }
     
     func setupDatePicker() {
         // Creating DatePicker
@@ -106,7 +106,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         self.timeframeTextBox.text = dateFormatter.string(from: self.datePicker.date)
         self.timeframeTextBox.resignFirstResponder()
         self.datePicker.isHidden = true
-        self.startSavingButton.isEnabled = true
+        self.enableOrDisableStartSavingButton()
         
         
     }
