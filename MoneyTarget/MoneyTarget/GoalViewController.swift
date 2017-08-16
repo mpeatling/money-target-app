@@ -18,8 +18,8 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDesign()
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        //self.enableOrDisableStartSavingButton()
+    
     }
 
     func setupDesign() {
@@ -31,7 +31,10 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         self.timeframeTextBox.attributedPlaceholder = NSAttributedString(string: "Feb 5, 2018", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
         self.addDoneButtonOnKeyboard()
         self.setupDatePicker()
+        self.startSavingButton.isEnabled = false
+        
     }
+    
     
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
@@ -52,8 +55,18 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     
     func doneButtonAction() {
         self.goalAmountTextBox.resignFirstResponder()
+        self.startSavingButton.isEnabled = false
+        
     }
 
+    //func enableOrDisableStartSavingButton() {
+    //    if self.goalAmountTextBox.text == "" && self.timeframeTextBox.text == "" {
+    //        self.startSavingButton.isEnabled = false
+    //    } else {
+    //        self.startSavingButton.isEnabled = true
+    //    }
+  //  }
+    
     func setupDatePicker() {
         // Creating DatePicker
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
@@ -79,6 +92,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func timeframeTextBoxEditingBegan(_ sender: Any) {
         self.setupDatePicker()
+        
     }
     
     func datePickerCancelClicked() {
@@ -91,7 +105,13 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.timeStyle = .none
         self.timeframeTextBox.text = dateFormatter.string(from: self.datePicker.date)
         self.timeframeTextBox.resignFirstResponder()
+        self.datePicker.isHidden = true
+        self.startSavingButton.isEnabled = true
+        
+        
     }
+    
+    
     
     @IBAction func startSavingButtonPressed(_ sender: Any) {
     }
