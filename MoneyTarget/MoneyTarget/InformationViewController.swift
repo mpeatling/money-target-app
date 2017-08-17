@@ -10,34 +10,47 @@ import UIKit
 
 class InformationViewController: UIViewController {
     
-    @IBOutlet weak var numberOfHoursWorkedTextBox: UITextField!
-    @IBOutlet weak var numberOfTipsEarnedTextBox: UITextField!
-    @IBOutlet weak var numberOfDaysWorkedTextBox: UITextField!
-    @IBOutlet weak var letsGoButton: UIButton!
+    @IBOutlet weak var numberOfHoursWorkedTextBox: UIToolbarTextField!
+    @IBOutlet weak var numberOfTipsEarnedTextBox: UIToolbarTextField!
+    @IBOutlet weak var numberOfDaysWorkedTextBox: UIToolbarTextField!
     @IBOutlet weak var informationOnAmountsToEnterLabel: UILabel!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDesign()
+        self.nextButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
 
     func setupDesign() {
-        self.letsGoButton.layer.cornerRadius = self.letsGoButton.frame.height/2
-        self.numberOfHoursWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "35", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
-        self.numberOfTipsEarnedTextBox.attributedPlaceholder = NSAttributedString(string: "260", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
-        self.numberOfDaysWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "5", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
+        self.numberOfHoursWorkedTextBox.setPlaceholder(placeholder: "35")
+        self.numberOfTipsEarnedTextBox.setPlaceholder(placeholder: "260")
+        self.numberOfDaysWorkedTextBox.setPlaceholder(placeholder: "5")
         self.hideTextRevealLetsGoButton()
         
     }
     
+    @IBAction func numberOfDaysWorkedTextBoxEditingEnded(_ sender: Any) {
+          self.hideTextRevealLetsGoButton()
+    }
+    
+    @IBAction func numberOfHoursWorkedTextBoxEditingEnded(_ sender: Any) {
+          self.hideTextRevealLetsGoButton()
+    }
+    
+    @IBAction func numberOfTipsEarnedTextBoxEditingEnded(_ sender: Any) {
+          self.hideTextRevealLetsGoButton()
+    }
+    
+    
     func hideTextRevealLetsGoButton() {
         if numberOfHoursWorkedTextBox.text == "" || numberOfTipsEarnedTextBox.text == "" || numberOfDaysWorkedTextBox.text == "" {
-            self.letsGoButton.isHidden = true
+            self.nextButton.isEnabled = false
         } else {
-            self.letsGoButton.isHidden = false
-            self.informationOnAmountsToEnterLabel.isHidden = true
+            self.nextButton.isEnabled = true
         }
     }
     

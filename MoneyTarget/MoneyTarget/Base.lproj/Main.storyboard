@@ -53,11 +53,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Feb 5, 2018" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBc-MB-N4x">
-                                        <rect key="frame" x="0.0" y="318" width="288" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Feb 5, 2018" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tBc-MB-N4x" customClass="UIToolbarTextField" customModule="MoneyTarget" customModuleProvider="target">
+                                        <rect key="frame" x="19" y="318" width="250" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="WHt-tU-QgZ"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="iys-8R-bP5"/>
                                             <constraint firstAttribute="height" constant="50" id="mQj-2G-ODw"/>
                                         </constraints>
@@ -68,25 +69,7 @@
                                             <action selector="timeframeTextBoxEditingBegan:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="rlq-Db-LOi"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8p-pW-aCV">
-                                        <rect key="frame" x="44" y="408" width="200" height="55"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="C9S-Tf-WfU"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="DfT-sl-2nj"/>
-                                            <constraint firstAttribute="height" constant="55" id="Mht-RE-8bl"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="k2x-2H-qjb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <state key="normal" title="Start Saving">
-                                            <color key="titleColor" red="0.24943831562995911" green="0.38617610931396484" blue="0.50681120157241821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startSavingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2g-0I-3WU"/>
-                                            <segue destination="X11-hp-boN" kind="show" identifier="startSavingSegue" id="H2F-6m-Vty"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="500" adjustsFontForContentSizeCategory="YES" minimumFontSize="70" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-xP-dLn">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="500" adjustsFontForContentSizeCategory="YES" minimumFontSize="70" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-xP-dLn" customClass="UIToolbarTextField" customModule="MoneyTarget" customModuleProvider="target">
                                         <rect key="frame" x="117" y="152" width="143.5" height="81"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,6 +79,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="goalAmountTextBoxEditingEnded:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="4iz-9H-CQg"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQH-cK-Zob">
                                         <rect key="frame" x="0.0" y="152" width="115" height="81"/>
@@ -112,18 +98,15 @@
                                     <constraint firstItem="RQH-cK-Zob" firstAttribute="top" secondItem="oIu-3b-YYG" secondAttribute="bottom" constant="20" id="1Zd-uR-d6K"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="1zK-zw-iOl"/>
                                     <constraint firstItem="foN-D9-ejy" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="5me-3H-F9E"/>
-                                    <constraint firstAttribute="trailing" secondItem="tBc-MB-N4x" secondAttribute="trailing" id="7p2-JO-EoW"/>
                                     <constraint firstItem="kMX-xP-dLn" firstAttribute="leading" secondItem="RQH-cK-Zob" secondAttribute="trailing" constant="2" id="9v5-MA-QfW"/>
                                     <constraint firstItem="oIu-3b-YYG" firstAttribute="top" secondItem="hsV-4k-B3I" secondAttribute="bottom" constant="20" id="DMs-2g-dD1"/>
+                                    <constraint firstItem="tBc-MB-N4x" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="ILq-wV-JqI"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="Pik-eg-3Wt"/>
-                                    <constraint firstItem="f8p-pW-aCV" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="Pzh-Ti-vGZ"/>
-                                    <constraint firstItem="f8p-pW-aCV" firstAttribute="top" secondItem="tBc-MB-N4x" secondAttribute="bottom" constant="40" id="Qzi-CB-dTL"/>
                                     <constraint firstItem="kMX-xP-dLn" firstAttribute="top" secondItem="oIu-3b-YYG" secondAttribute="bottom" constant="20" id="R3O-Fh-NIe"/>
                                     <constraint firstItem="tBc-MB-N4x" firstAttribute="top" secondItem="foN-D9-ejy" secondAttribute="bottom" constant="20" id="RMv-UZ-uCP"/>
                                     <constraint firstAttribute="height" constant="470" id="RsJ-e8-S0A"/>
                                     <constraint firstItem="RQH-cK-Zob" firstAttribute="width" secondItem="PGp-KY-wze" secondAttribute="width" multiplier="0.4" id="a7v-ei-7C9"/>
                                     <constraint firstAttribute="trailing" secondItem="oIu-3b-YYG" secondAttribute="trailing" id="bZ3-He-UqP"/>
-                                    <constraint firstItem="tBc-MB-N4x" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="dpH-4a-TtH"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="top" secondItem="PGp-KY-wze" secondAttribute="top" id="n36-AI-z05"/>
                                     <constraint firstItem="foN-D9-ejy" firstAttribute="top" secondItem="kMX-xP-dLn" secondAttribute="bottom" constant="15" id="n7G-oY-m4y"/>
                                     <constraint firstAttribute="trailing" secondItem="foN-D9-ejy" secondAttribute="trailing" id="uIN-6y-cxB"/>
@@ -139,14 +122,22 @@
                             <constraint firstItem="PGp-KY-wze" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xae-9B-fSf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nJy-st-KXB"/>
+                    <navigationItem key="navigationItem" id="nJy-st-KXB">
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="g6L-OS-tAB">
+                            <connections>
+                                <action selector="nextButton:" destination="B3V-9L-2vW" id="Fza-fl-Z1j"/>
+                                <segue destination="X11-hp-boN" kind="show" id="dwq-KY-f4g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="goalAmountTextBox" destination="kMX-xP-dLn" id="AOi-DH-y7f"/>
-                        <outlet property="startSavingButton" destination="f8p-pW-aCV" id="kHV-ef-0yR"/>
+                        <outlet property="nextButton" destination="g6L-OS-tAB" id="8SY-QF-uE8"/>
                         <outlet property="timeframeTextBox" destination="tBc-MB-N4x" id="YEX-i2-UBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="B3V-9L-2vW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1132.5" y="138.38028169014083"/>
         </scene>
@@ -192,7 +183,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="35" textAlignment="right" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="rmC-i5-Ec2">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="35" textAlignment="right" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="rmC-i5-Ec2" customClass="UIToolbarTextField" customModule="MoneyTarget" customModuleProvider="target">
                                         <rect key="frame" x="47" y="235" width="72.5" height="80"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,6 +193,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="numberOfHoursWorkedTextBoxEditingEnded:" destination="X11-hp-boN" eventType="editingDidEnd" id="s8Y-6e-BM0"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hrs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-SY-ube">
                                         <rect key="frame" x="129.5" y="235" width="158.5" height="72"/>
@@ -212,8 +206,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="260" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6w-1L-Rrs">
-                                        <rect key="frame" x="129.5" y="364" width="158.5" height="72"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="260" minimumFontSize="60" translatesAutoresizingMaskIntoConstraints="NO" id="l6w-1L-Rrs" customClass="UIToolbarTextField" customModule="MoneyTarget" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="364" width="108" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -222,8 +216,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="numberOfTipsEarnedTextBoxEditingEnded:" destination="X11-hp-boN" eventType="editingDidEnd" id="P9G-dt-Yxu"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="5" textAlignment="right" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-xJ-SlD">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="5" textAlignment="right" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-xJ-SlD" customClass="UIToolbarTextField" customModule="MoneyTarget" customModuleProvider="target">
                                         <rect key="frame" x="80.5" y="98" width="39" height="80"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,6 +230,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="numberOfDaysWorkedTextBoxEditingEnded:" destination="X11-hp-boN" eventType="editingDidEnd" id="IuC-fV-fNE"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-bT-3FL">
                                         <rect key="frame" x="129.5" y="98" width="158.5" height="80"/>
@@ -254,44 +254,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bb-tI-Gix">
-                                        <rect key="frame" x="84" y="364" width="35.5" height="72"/>
+                                        <rect key="frame" x="0.0" y="364" width="115" height="72"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyW-FM-g3H">
-                                        <rect key="frame" x="44" y="453" width="200" height="55"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="5ku-bl-Y4F"/>
-                                            <constraint firstAttribute="height" constant="55" id="ceI-HJ-NCK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <state key="normal" title="Let's Go!">
-                                            <color key="titleColor" red="0.11473900824785233" green="0.054360777139663696" blue="0.26088160276412964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startSavingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oQu-AT-heZ"/>
-                                            <segue destination="1mQ-cX-UEH" kind="show" id="KQM-Yw-MGA"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="8Bb-tI-Gix" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.4" id="419-Ne-26l"/>
                                     <constraint firstAttribute="trailing" secondItem="bK6-NH-2us" secondAttribute="trailing" id="5YX-VZ-Smj"/>
+                                    <constraint firstItem="8Bb-tI-Gix" firstAttribute="leading" secondItem="6BO-YC-HVU" secondAttribute="leading" multiplier="0.5" id="9vg-ph-SHG"/>
                                     <constraint firstItem="LgA-SY-ube" firstAttribute="top" secondItem="bK6-NH-2us" secondAttribute="bottom" constant="8" id="9ws-6n-lei"/>
                                     <constraint firstAttribute="trailing" secondItem="IXT-bT-3FL" secondAttribute="trailing" id="A2a-YQ-24c"/>
                                     <constraint firstAttribute="bottom" secondItem="luh-IE-kqk" secondAttribute="bottom" constant="10" id="Acm-mf-ihl"/>
                                     <constraint firstItem="rmC-i5-Ec2" firstAttribute="top" secondItem="bK6-NH-2us" secondAttribute="bottom" constant="8" id="Bv1-EL-iBe"/>
                                     <constraint firstItem="haO-o6-WcN" firstAttribute="top" secondItem="LgA-SY-ube" secondAttribute="bottom" constant="8" id="CIX-99-VxS"/>
-                                    <constraint firstAttribute="trailing" secondItem="l6w-1L-Rrs" secondAttribute="trailing" id="DcC-z7-IZM"/>
                                     <constraint firstItem="bK6-NH-2us" firstAttribute="leading" secondItem="6BO-YC-HVU" secondAttribute="leading" id="GpK-Fn-dac"/>
                                     <constraint firstItem="bK6-NH-2us" firstAttribute="centerX" secondItem="6BO-YC-HVU" secondAttribute="centerX" id="IgR-fB-f7T"/>
-                                    <constraint firstItem="l6w-1L-Rrs" firstAttribute="leading" secondItem="8Bb-tI-Gix" secondAttribute="trailing" constant="10" id="Jp7-hm-WGy"/>
                                     <constraint firstItem="IXT-bT-3FL" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="KjC-yN-jNf"/>
-                                    <constraint firstItem="l6w-1L-Rrs" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="LT5-NS-Kxx"/>
-                                    <constraint firstItem="wyW-FM-g3H" firstAttribute="top" secondItem="l6w-1L-Rrs" secondAttribute="bottom" constant="17" id="Lxz-O3-z3J"/>
                                     <constraint firstItem="YkF-xJ-SlD" firstAttribute="top" secondItem="Se4-0J-Cdx" secondAttribute="bottom" constant="8" id="M7B-Mf-zQO"/>
+                                    <constraint firstItem="l6w-1L-Rrs" firstAttribute="leading" secondItem="8Bb-tI-Gix" secondAttribute="trailing" constant="10" id="Ntv-Ab-iIG"/>
                                     <constraint firstItem="Se4-0J-Cdx" firstAttribute="top" secondItem="6BO-YC-HVU" secondAttribute="top" id="ORz-9B-Q8z"/>
                                     <constraint firstAttribute="trailing" secondItem="haO-o6-WcN" secondAttribute="trailing" id="OXz-MJ-sAq"/>
                                     <constraint firstItem="luh-IE-kqk" firstAttribute="centerX" secondItem="6BO-YC-HVU" secondAttribute="centerX" id="Pib-uv-PD7"/>
@@ -305,9 +288,7 @@
                                     <constraint firstItem="bK6-NH-2us" firstAttribute="top" secondItem="IXT-bT-3FL" secondAttribute="bottom" constant="8" id="jqL-TA-efM"/>
                                     <constraint firstItem="l6w-1L-Rrs" firstAttribute="top" secondItem="haO-o6-WcN" secondAttribute="bottom" constant="8" id="jyV-kg-xwx"/>
                                     <constraint firstAttribute="trailing" secondItem="LgA-SY-ube" secondAttribute="trailing" id="lpC-ZC-lec"/>
-                                    <constraint firstAttribute="bottom" secondItem="wyW-FM-g3H" secondAttribute="bottom" constant="2" id="oRL-E6-NiS"/>
                                     <constraint firstAttribute="height" constant="510" id="rJh-91-fPN"/>
-                                    <constraint firstItem="wyW-FM-g3H" firstAttribute="centerX" secondItem="6BO-YC-HVU" secondAttribute="centerX" id="uwg-8Q-Piu"/>
                                     <constraint firstItem="LgA-SY-ube" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="wcT-Kv-4Pc"/>
                                 </constraints>
                             </view>
@@ -319,9 +300,16 @@
                             <constraint firstItem="6BO-YC-HVU" firstAttribute="leading" secondItem="Jss-aq-HZk" secondAttribute="leadingMargin" id="U6u-rF-0rV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ki6-HG-F30">
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="o1j-iw-oMg">
+                            <connections>
+                                <segue destination="1mQ-cX-UEH" kind="show" id="Ffc-gc-AQp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="informationOnAmountsToEnterLabel" destination="luh-IE-kqk" id="83v-CQ-xuO"/>
-                        <outlet property="letsGoButton" destination="wyW-FM-g3H" id="Uwr-rf-qPE"/>
+                        <outlet property="nextButton" destination="o1j-iw-oMg" id="SLr-pS-S87"/>
                         <outlet property="numberOfDaysWorkedTextBox" destination="YkF-xJ-SlD" id="YP2-z7-eAB"/>
                         <outlet property="numberOfHoursWorkedTextBox" destination="rmC-i5-Ec2" id="4bn-LO-Wvv"/>
                         <outlet property="numberOfTipsEarnedTextBox" destination="l6w-1L-Rrs" id="58x-FO-PMd"/>
