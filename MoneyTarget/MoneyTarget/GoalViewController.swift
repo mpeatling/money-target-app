@@ -29,11 +29,12 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         self.startSavingButton.layer.cornerRadius = self.startSavingButton.frame.height/2
-        self.goalAmountTextBox.attributedPlaceholder = NSAttributedString(string: "$500", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
+        self.goalAmountTextBox.attributedPlaceholder = NSAttributedString(string: "500", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
         self.timeframeTextBox.attributedPlaceholder = NSAttributedString(string: "Feb 5, 2018", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
         self.addDoneButtonOnKeyboard()
         self.setupDatePicker()
         self.enableOrDisableStartSavingButton()
+        
         
     }
     
@@ -41,10 +42,19 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         let borderView = UIView()
         borderView.layer.borderWidth = 1
         borderView.layer.borderColor = UIColor.white.cgColor
-        borderView.frame = CGRect(x: -1, y:self.goalAmountTextBox.frame.height - 1, width: self.goalAmountTextBox.frame.width + 2, height: 1)
+        borderView.frame = CGRect(x: -1, y:self.goalAmountTextBox.frame.height - 1, width: self.goalAmountTextBox.frame.width + 50, height: 1)
         self.goalAmountTextBox.addSubview(borderView)
         self.goalAmountTextBox.sendSubview(toBack: borderView)
         
+    }
+    
+    func addBottomLineToTimeFrameTextBox() {
+        let borderView = UIView()
+        borderView.layer.borderWidth = 1
+        borderView.layer.borderColor = UIColor.white.cgColor
+        borderView.frame = CGRect(x: -1, y:self.timeframeTextBox.frame.height - 1, width: self.timeframeTextBox.frame.width + 2, height: 1)
+        self.timeframeTextBox.addSubview(borderView)
+        self.timeframeTextBox.sendSubview(toBack: borderView)
     }
     
     func addDoneButtonOnKeyboard() {
@@ -106,6 +116,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     }
     
     func datePickerCancelClicked() {
+        self.timeframeTextBox.text = ""
         self.timeframeTextBox.resignFirstResponder()
     }
   
