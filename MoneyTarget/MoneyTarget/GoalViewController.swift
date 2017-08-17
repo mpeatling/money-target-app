@@ -60,7 +60,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
     }
 
     func enableOrDisableStartSavingButton() {
-       if self.goalAmountTextBox.text == "" && self.timeframeTextBox.text == "" || self.goalAmountTextBox.text == "" || self.timeframeTextBox.text == "" {
+       if self.goalAmountTextBox.text == "" || self.timeframeTextBox.text == "" {
             self.startSavingButton.isEnabled = false
         } else {
             self.startSavingButton.isEnabled = true
@@ -78,7 +78,6 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        //toolBar.tintColor = UIColor(red: 65/255, green: 99/255, blue: 128/255, alpha: 1)
         toolBar.sizeToFit()
 
         // Adding Button ToolBar
