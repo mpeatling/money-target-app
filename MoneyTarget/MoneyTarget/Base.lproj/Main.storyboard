@@ -87,10 +87,11 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$500" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-xP-dLn">
-                                        <rect key="frame" x="0.0" y="152" width="288" height="81"/>
+                                        <rect key="frame" x="49" y="152" width="190" height="81"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="2pY-yL-sy5"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="6h5-gh-Hra"/>
                                             <constraint firstAttribute="height" constant="81" id="mSC-5C-Gcf"/>
                                         </constraints>
@@ -114,11 +115,9 @@
                                     <constraint firstAttribute="height" constant="470" id="RsJ-e8-S0A"/>
                                     <constraint firstAttribute="trailing" secondItem="oIu-3b-YYG" secondAttribute="trailing" id="bZ3-He-UqP"/>
                                     <constraint firstItem="tBc-MB-N4x" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="dpH-4a-TtH"/>
-                                    <constraint firstItem="kMX-xP-dLn" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="gyf-jS-mJh"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="top" secondItem="PGp-KY-wze" secondAttribute="top" id="n36-AI-z05"/>
                                     <constraint firstItem="foN-D9-ejy" firstAttribute="top" secondItem="kMX-xP-dLn" secondAttribute="bottom" constant="15" id="n7G-oY-m4y"/>
                                     <constraint firstAttribute="trailing" secondItem="foN-D9-ejy" secondAttribute="trailing" id="uIN-6y-cxB"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kMX-xP-dLn" secondAttribute="trailing" id="wf9-jO-IvM"/>
                                     <constraint firstItem="oIu-3b-YYG" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="xT7-ND-9Ce"/>
                                 </constraints>
                             </view>

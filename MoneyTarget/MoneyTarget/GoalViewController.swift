@@ -21,7 +21,9 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         self.enableOrDisableStartSavingButton()
     
     }
-
+    override func viewDidLayoutSubviews() {
+        self.addBottomLineToGoalTextBox()
+    }
     func setupDesign() {
        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -35,6 +37,15 @@ class GoalViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func addBottomLineToGoalTextBox() {
+        let borderView = UIView()
+        borderView.layer.borderWidth = 1
+        borderView.layer.borderColor = UIColor.white.cgColor
+        borderView.frame = CGRect(x: -1, y:self.goalAmountTextBox.frame.height - 1, width: self.goalAmountTextBox.frame.width + 2, height: 1)
+        self.goalAmountTextBox.addSubview(borderView)
+        self.goalAmountTextBox.sendSubview(toBack: borderView)
+        
+    }
     
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
