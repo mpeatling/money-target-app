@@ -13,7 +13,8 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var numberOfHoursWorkedTextBox: UITextField!
     @IBOutlet weak var numberOfTipsEarnedTextBox: UITextField!
     @IBOutlet weak var numberOfDaysWorkedTextBox: UITextField!
-    
+    @IBOutlet weak var letsGoButton: UIButton!
+    @IBOutlet weak var informationOnAmountsToEnterLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -23,13 +24,22 @@ class InformationViewController: UIViewController {
     }
 
     func setupDesign() {
-        self.numberOfHoursWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "35", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
-        self.numberOfTipsEarnedTextBox.attributedPlaceholder = NSAttributedString(string: "260", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
-        self.numberOfDaysWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "5", attributes: [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 255, green: 255, blue: 255, alpha: 0.25)])
-
+        self.letsGoButton.layer.cornerRadius = self.letsGoButton.frame.height/2
+        self.numberOfHoursWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "35", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
+        self.numberOfTipsEarnedTextBox.attributedPlaceholder = NSAttributedString(string: "260", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
+        self.numberOfDaysWorkedTextBox.attributedPlaceholder = NSAttributedString(string: "5", attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
+        self.hideTextRevealLetsGoButton()
+        
     }
     
-    
+    func hideTextRevealLetsGoButton() {
+        if numberOfHoursWorkedTextBox.text == "" || numberOfTipsEarnedTextBox.text == "" || numberOfDaysWorkedTextBox.text == "" {
+            self.letsGoButton.isHidden = true
+        } else {
+            self.letsGoButton.isHidden = false
+            self.informationOnAmountsToEnterLabel.isHidden = true
+        }
+    }
     
    
     

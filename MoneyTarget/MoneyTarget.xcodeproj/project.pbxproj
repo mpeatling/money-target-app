@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */; };
 		B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */; };
 		B61E3DB31F3CBE9D0039DFE7 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */; };
 		B61E3DB61F3CBE9D0039DFE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61E3DB41F3CBE9D0039DFE7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		B61E3DAD1F3CBE9D0039DFE7 /* MoneyTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */,
 				B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */,
 				B61E3DB41F3CBE9D0039DFE7 /* Main.storyboard */,
+				B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */,
 				B61E3DBA1F3CBE9D0039DFE7 /* Assets.xcassets */,
 				B61E3DBC1F3CBE9D0039DFE7 /* LaunchScreen.storyboard */,
 				B61E3DBF1F3CBE9D0039DFE7 /* Info.plist */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */,
 				B61E3DB91F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld in Sources */,
 				B61E3DB31F3CBE9D0039DFE7 /* GoalViewController.swift in Sources */,
 				B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */,

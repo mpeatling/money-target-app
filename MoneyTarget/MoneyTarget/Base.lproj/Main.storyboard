@@ -259,6 +259,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyW-FM-g3H">
+                                        <rect key="frame" x="44" y="453" width="200" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="5ku-bl-Y4F"/>
+                                            <constraint firstAttribute="height" constant="55" id="ceI-HJ-NCK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <state key="normal" title="Let's Go!">
+                                            <color key="titleColor" red="0.11473900824785233" green="0.054360777139663696" blue="0.26088160276412964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startSavingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oQu-AT-heZ"/>
+                                            <segue destination="1mQ-cX-UEH" kind="show" id="KQM-Yw-MGA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -274,6 +290,7 @@
                                     <constraint firstItem="l6w-1L-Rrs" firstAttribute="leading" secondItem="8Bb-tI-Gix" secondAttribute="trailing" constant="10" id="Jp7-hm-WGy"/>
                                     <constraint firstItem="IXT-bT-3FL" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="KjC-yN-jNf"/>
                                     <constraint firstItem="l6w-1L-Rrs" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="LT5-NS-Kxx"/>
+                                    <constraint firstItem="wyW-FM-g3H" firstAttribute="top" secondItem="l6w-1L-Rrs" secondAttribute="bottom" constant="17" id="Lxz-O3-z3J"/>
                                     <constraint firstItem="YkF-xJ-SlD" firstAttribute="top" secondItem="Se4-0J-Cdx" secondAttribute="bottom" constant="8" id="M7B-Mf-zQO"/>
                                     <constraint firstItem="Se4-0J-Cdx" firstAttribute="top" secondItem="6BO-YC-HVU" secondAttribute="top" id="ORz-9B-Q8z"/>
                                     <constraint firstAttribute="trailing" secondItem="haO-o6-WcN" secondAttribute="trailing" id="OXz-MJ-sAq"/>
@@ -288,7 +305,9 @@
                                     <constraint firstItem="bK6-NH-2us" firstAttribute="top" secondItem="IXT-bT-3FL" secondAttribute="bottom" constant="8" id="jqL-TA-efM"/>
                                     <constraint firstItem="l6w-1L-Rrs" firstAttribute="top" secondItem="haO-o6-WcN" secondAttribute="bottom" constant="8" id="jyV-kg-xwx"/>
                                     <constraint firstAttribute="trailing" secondItem="LgA-SY-ube" secondAttribute="trailing" id="lpC-ZC-lec"/>
+                                    <constraint firstAttribute="bottom" secondItem="wyW-FM-g3H" secondAttribute="bottom" constant="2" id="oRL-E6-NiS"/>
                                     <constraint firstAttribute="height" constant="510" id="rJh-91-fPN"/>
+                                    <constraint firstItem="wyW-FM-g3H" firstAttribute="centerX" secondItem="6BO-YC-HVU" secondAttribute="centerX" id="uwg-8Q-Piu"/>
                                     <constraint firstItem="LgA-SY-ube" firstAttribute="width" secondItem="6BO-YC-HVU" secondAttribute="width" multiplier="0.55" id="wcT-Kv-4Pc"/>
                                 </constraints>
                             </view>
@@ -301,6 +320,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="informationOnAmountsToEnterLabel" destination="luh-IE-kqk" id="83v-CQ-xuO"/>
+                        <outlet property="letsGoButton" destination="wyW-FM-g3H" id="Uwr-rf-qPE"/>
                         <outlet property="numberOfDaysWorkedTextBox" destination="YkF-xJ-SlD" id="YP2-z7-eAB"/>
                         <outlet property="numberOfHoursWorkedTextBox" destination="rmC-i5-Ec2" id="4bn-LO-Wvv"/>
                         <outlet property="numberOfTipsEarnedTextBox" destination="l6w-1L-Rrs" id="58x-FO-PMd"/>
@@ -310,10 +331,10 @@
             </objects>
             <point key="canvasLocation" x="1911.2" y="135.38230884557723"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Page View Controller-->
         <scene sceneID="UOd-Gq-wQ3">
             <objects>
-                <viewController id="1mQ-cX-UEH" sceneMemberID="viewController">
+                <viewController id="1mQ-cX-UEH" customClass="ProfilePageViewController" customModule="MoneyTarget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="urf-2j-J8w"/>
                         <viewControllerLayoutGuide type="bottom" id="hyk-nL-bEN"/>
