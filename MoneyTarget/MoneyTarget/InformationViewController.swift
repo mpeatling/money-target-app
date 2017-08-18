@@ -15,6 +15,8 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var numberOfDaysWorkedTextBox: UIToolbarTextField!
     @IBOutlet weak var informationOnAmountsToEnterLabel: UILabel!
     @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var containerView: UIView!
+    
     
     
     
@@ -29,24 +31,31 @@ class InformationViewController: UIViewController {
         self.numberOfHoursWorkedTextBox.setPlaceholder(placeholder: "35")
         self.numberOfTipsEarnedTextBox.setPlaceholder(placeholder: "260")
         self.numberOfDaysWorkedTextBox.setPlaceholder(placeholder: "5")
-        self.hideTextRevealLetsGoButton()
+        self.hideTextRevealnextButton()
         
     }
     
+    
+    
     @IBAction func numberOfDaysWorkedTextBoxEditingEnded(_ sender: Any) {
-          self.hideTextRevealLetsGoButton()
+          self.hideTextRevealnextButton()
     }
     
     @IBAction func numberOfHoursWorkedTextBoxEditingEnded(_ sender: Any) {
-          self.hideTextRevealLetsGoButton()
+          self.hideTextRevealnextButton()
     }
+    
+    @IBAction func numberOfTipsEarnedTextBoxEditingDidBegin(_ sender: Any) {
+        self.containerView.frame.origin.y = -75
+    }
+    
     
     @IBAction func numberOfTipsEarnedTextBoxEditingEnded(_ sender: Any) {
-          self.hideTextRevealLetsGoButton()
+        self.hideTextRevealnextButton()
     }
     
     
-    func hideTextRevealLetsGoButton() {
+    func hideTextRevealnextButton() {
         if numberOfHoursWorkedTextBox.text == "" || numberOfTipsEarnedTextBox.text == "" || numberOfDaysWorkedTextBox.text == "" {
             self.nextButton.isEnabled = false
         } else {

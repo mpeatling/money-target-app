@@ -217,6 +217,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
+                                            <action selector="numberOfTipsEarnedTextBoxEditingDidBegin:" destination="X11-hp-boN" eventType="editingDidBegin" id="G5Y-b0-gcx"/>
                                             <action selector="numberOfTipsEarnedTextBoxEditingEnded:" destination="X11-hp-boN" eventType="editingDidEnd" id="P9G-dt-Yxu"/>
                                         </connections>
                                     </textField>
@@ -308,6 +309,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="6BO-YC-HVU" id="CbE-d5-T9K"/>
                         <outlet property="informationOnAmountsToEnterLabel" destination="luh-IE-kqk" id="83v-CQ-xuO"/>
                         <outlet property="nextButton" destination="o1j-iw-oMg" id="SLr-pS-S87"/>
                         <outlet property="numberOfDaysWorkedTextBox" destination="YkF-xJ-SlD" id="YP2-z7-eAB"/>
