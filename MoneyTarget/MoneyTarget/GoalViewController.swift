@@ -13,9 +13,8 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
     @IBOutlet weak var timeframeTextBox: UIToolbarTextField!
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
-    
     var datePicker = UIDatePicker()
-   
+    var minimumDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +57,12 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
         self.datePicker.backgroundColor = UIColor.white
         self.datePicker.datePickerMode = UIDatePickerMode.date
         self.timeframeTextBox.inputView = self.datePicker
+        if self.minimumDate > self.datePicker.date {
+            self.datePicker.minimumDate = self.minimumDate
+        }else{
+            self.datePicker.minimumDate = self.datePicker.date
+        }
+        
     }
     
     func doneButtonTapped(textField: UIToolbarTextField) {
@@ -66,6 +71,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             self.timeframeTextBox.text = dateFormatter.string(from: self.datePicker.date)
+            self.minimumDate = self.datePicker.date
             self.datePicker.isHidden = true
             self.enableOrDisableStartSavingButton()
         }
@@ -73,7 +79,6 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
     
     @IBAction func timeframeTextBoxEditingBegan(_ sender: Any) {
         self.setupDatePicker()
-        
     }
     
 }
