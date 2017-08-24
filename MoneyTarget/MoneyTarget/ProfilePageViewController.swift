@@ -8,20 +8,45 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
+class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var goalAmountLabel: UILabel!
+    @IBOutlet weak var dollarAmountNeededPerShiftLabel: UILabel!
+    @IBOutlet weak var tipsEarnedTodayTextField: UIToolbarTextField!
+    @IBOutlet weak var hoursWorkedTodayTextField: UIToolbarTextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.enableAndDisableSaveButton()
+        
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func doneButtonTapped(textField: UIToolbarTextField) {
+        self.enableAndDisableSaveButton()
+        
     }
     
-
+    func enableAndDisableSaveButton() {
+        if self.tipsEarnedTodayTextField.text == "" || self.hoursWorkedTodayTextField.text == "" {
+            self.saveButton.isEnabled = false
+        } else {
+            self.saveButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func tipsEarnedTodayTextFieldEditingEnded(_ sender: Any) {
+        self.enableAndDisableSaveButton()
+    }
+    
+    @IBAction func hoursWorkedTodayTextFieldEditingEnded(_ sender: Any) {
+        self.enableAndDisableSaveButton()
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
