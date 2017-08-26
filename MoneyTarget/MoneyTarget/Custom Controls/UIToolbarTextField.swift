@@ -26,7 +26,7 @@ class UIToolbarTextField: UITextField {
         let borderView = UIView()
         borderView.layer.borderWidth = 1
         borderView.layer.borderColor = UIColor.white.cgColor
-        borderView.frame = CGRect(x: -1, y:self.frame.height - 1, width: self.frame.width + 50, height: 1)
+        borderView.frame = CGRect(x: -1, y:self.frame.height - 1, width: self.frame.width + 1, height: 1)
         self.addSubview(borderView)
         self.sendSubview(toBack: borderView)
         

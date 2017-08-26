@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HPb-zG-Wmf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HPb-zG-Wmf">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,17 +92,24 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LU-aK-uiw">
+                                        <rect key="frame" x="103" y="416" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="RQH-cK-Zob" firstAttribute="top" secondItem="oIu-3b-YYG" secondAttribute="bottom" constant="20" id="1Zd-uR-d6K"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="1zK-zw-iOl"/>
                                     <constraint firstItem="foN-D9-ejy" firstAttribute="leading" secondItem="PGp-KY-wze" secondAttribute="leading" id="5me-3H-F9E"/>
+                                    <constraint firstItem="kMX-xP-dLn" firstAttribute="top" secondItem="oIu-3b-YYG" secondAttribute="bottom" constant="20" id="6U0-Dx-9it"/>
                                     <constraint firstItem="kMX-xP-dLn" firstAttribute="leading" secondItem="RQH-cK-Zob" secondAttribute="trailing" constant="2" id="9v5-MA-QfW"/>
                                     <constraint firstItem="oIu-3b-YYG" firstAttribute="top" secondItem="hsV-4k-B3I" secondAttribute="bottom" constant="20" id="DMs-2g-dD1"/>
                                     <constraint firstItem="tBc-MB-N4x" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="ILq-wV-JqI"/>
                                     <constraint firstItem="hsV-4k-B3I" firstAttribute="centerX" secondItem="PGp-KY-wze" secondAttribute="centerX" id="Pik-eg-3Wt"/>
-                                    <constraint firstItem="kMX-xP-dLn" firstAttribute="top" secondItem="oIu-3b-YYG" secondAttribute="bottom" constant="20" id="R3O-Fh-NIe"/>
                                     <constraint firstItem="tBc-MB-N4x" firstAttribute="top" secondItem="foN-D9-ejy" secondAttribute="bottom" constant="20" id="RMv-UZ-uCP"/>
                                     <constraint firstAttribute="height" constant="470" id="RsJ-e8-S0A"/>
                                     <constraint firstItem="RQH-cK-Zob" firstAttribute="width" secondItem="PGp-KY-wze" secondAttribute="width" multiplier="0.4" id="a7v-ei-7C9"/>
@@ -131,6 +138,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="PGp-KY-wze" id="1F0-zo-lth"/>
                         <outlet property="goalAmountTextBox" destination="kMX-xP-dLn" id="AOi-DH-y7f"/>
                         <outlet property="nextButton" destination="g6L-OS-tAB" id="8SY-QF-uE8"/>
                         <outlet property="timeframeTextBox" destination="tBc-MB-N4x" id="YEX-i2-UBi"/>
@@ -379,7 +387,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi2-xh-2zh">
-                                        <rect key="frame" x="16" y="203" width="288" height="1"/>
+                                        <rect key="frame" x="16.5" y="203" width="288.5" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Zza-RP-w3l"/>

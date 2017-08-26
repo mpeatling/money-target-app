@@ -17,14 +17,29 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var containerView: UIView!
     
-    
-    
+    var keyboardIsShowing = false
+    let containerViewOffset: CGFloat = -100
+    var containerViewYOrigin: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDesign()
         self.nextButton.isEnabled = false
+        
+        self.view.setNeedsLayout()
+        self.containerViewYOrigin = self.containerView.frame.origin.y
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+//        if self.keyboardIsShowing {
+//            self.containerView.frame.origin.y = self.containerViewOffset
+//        } else {
+//            self.containerView.frame.origin.y = self.containerViewYOrigin
+//        }
     }
 
     func setupDesign() {
@@ -35,7 +50,15 @@ class InformationViewController: UIViewController {
         
     }
     
+    func keyboardWillShow() {
+        self.containerView.frame.origin.y = self.containerViewOffset
+        self.keyboardIsShowing = true
+    }
     
+    func keyboardWillHide() {
+        self.containerView.frame.origin.y = self.containerViewYOrigin
+        self.keyboardIsShowing = false
+    }
     
     @IBAction func numberOfDaysWorkedTextBoxEditingEnded(_ sender: Any) {
           self.hideTextRevealnextButton()
@@ -46,7 +69,7 @@ class InformationViewController: UIViewController {
     }
     
     @IBAction func numberOfTipsEarnedTextBoxEditingDidBegin(_ sender: Any) {
-        self.containerView.frame.origin.y = -75
+        
     }
     
     

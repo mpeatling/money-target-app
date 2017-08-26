@@ -13,8 +13,12 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
     @IBOutlet weak var timeframeTextBox: UIToolbarTextField!
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
+    @IBOutlet weak var containerView: UIView!
     var datePicker = UIDatePicker()
-    var minimumDate = Date()
+    var selectedDate = Date()
+    var keyboardIsShowing = false
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +26,24 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
         self.enableOrDisableStartSavingButton()
         self.goalAmountTextBox.customDelegate = self
         self.timeframeTextBox.customDelegate = self
-    
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
-        
-    }
     
+//    func keyboardWillShow() {
+//        self.containerView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+//        self.keyboardIsShowing = true
+//    }
+//
+//    func keyboardWillHide() {
+//        self.containerView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+//        self.keyboardIsShowing = false
+//    }
+    
+  
+//
     func setupDesign() {
        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -57,11 +72,8 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
         self.datePicker.backgroundColor = UIColor.white
         self.datePicker.datePickerMode = UIDatePickerMode.date
         self.timeframeTextBox.inputView = self.datePicker
-        if self.minimumDate > self.datePicker.date {
-            self.datePicker.minimumDate = self.minimumDate
-        }else{
-            self.datePicker.minimumDate = self.datePicker.date
-        }
+        self.datePicker.minimumDate = Date()
+        self.datePicker.date = self.selectedDate
         
     }
     
@@ -71,7 +83,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             self.timeframeTextBox.text = dateFormatter.string(from: self.datePicker.date)
-            self.minimumDate = self.datePicker.date
+            self.selectedDate = self.datePicker.date
             self.datePicker.isHidden = true
             self.enableOrDisableStartSavingButton()
         }
