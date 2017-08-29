@@ -9,6 +9,9 @@
 import UIKit
 
 class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFieldDelegate {
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     @IBOutlet weak var goalAmountTextBox: UIToolbarTextField!
     @IBOutlet weak var timeframeTextBox: UIToolbarTextField!
     @IBOutlet weak var nextButton: UIBarButtonItem!
@@ -16,8 +19,6 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
     @IBOutlet weak var containerView: UIView!
     var datePicker = UIDatePicker()
     var selectedDate = Date()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,5 +81,16 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
         self.setupDatePicker()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let settingsEntity = Settings(context: self.context)
+        if let goalAmount = self.goalAmountTextBox.text, let goalAmountDouble = Double(goalAmount) {
+            settingsEntity.goalAmount = goalAmountDouble
+        }
+        settingsEntity.finishDate = self.selectedDate as? NSDate
+        
+        let nextVC = segue.destination as! InformationViewController
+            nextVC.settingsEntity = settingsEntity
+    }
+
 }
 

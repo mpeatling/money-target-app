@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6083CFC1F560F0900892F6C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6083CFB1F560F0900892F6C /* Data.swift */; };
 		B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */; };
 		B60DD9841F462E2B00B614DE /* UIToolbarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD9831F462E2B00B614DE /* UIToolbarTextField.swift */; };
 		B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6083CFB1F560F0900892F6C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		B60DD9831F462E2B00B614DE /* UIToolbarTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbarTextField.swift; sourceTree = "<group>"; };
 		B61E3DAD1F3CBE9D0039DFE7 /* MoneyTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B6DB95311F4635BF006AE19A /* Custom Controls */,
+				B6083CFB1F560F0900892F6C /* Data.swift */,
 				B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */,
 				B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */,
 				B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6083CFC1F560F0900892F6C /* Data.swift in Sources */,
 				B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */,
 				B60DD9841F462E2B00B614DE /* UIToolbarTextField.swift in Sources */,
 				B61E3DB91F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld in Sources */,

@@ -9,6 +9,8 @@
 import UIKit
 
 class InformationViewController: UIViewController {
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var numberOfHoursWorkedTextBox: UIToolbarTextField!
     @IBOutlet weak var numberOfDaysWorkedTextBox: UIToolbarTextField!
@@ -17,7 +19,7 @@ class InformationViewController: UIViewController {
  
     
     var keyboardIsShowing = false
-
+    var settingsEntity: Settings!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,22 +76,14 @@ class InformationViewController: UIViewController {
         }
     }
     
-   
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let daysWorked = self.numberOfDaysWorkedTextBox.text, let daysWorkedInt = Int16(daysWorked) {
+            self.settingsEntity.daysWorkedPerWeek = daysWorkedInt
+        }
+        self.settingsEntity.id = 1
+        
+        let appData = AppData()
+        appData.saveSettings(settings: self.settingsEntity)
+        print(appData.settings)
     }
-    */
-
 }
