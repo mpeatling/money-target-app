@@ -15,21 +15,10 @@ class UIToolbarTextField: UITextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addDoneButtonOnKeyboard()
-        self.addBottomLine()
     }
     
     func setPlaceholder(placeholder: String) {
         self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.25)])
-    }
-    
-    func addBottomLine() {
-        let borderView = UIView()
-        borderView.layer.borderWidth = 1
-        borderView.layer.borderColor = UIColor.white.cgColor
-        borderView.frame = CGRect(x: -1, y:self.frame.height - 1, width: self.frame.width + 1, height: 1)
-        self.addSubview(borderView)
-        self.sendSubview(toBack: borderView)
-        
     }
     
     func addDoneButtonOnKeyboard() {

@@ -26,6 +26,10 @@ class InformationViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.numberOfDaysWorkedTextBox.becomeFirstResponder()
+    }
+    
     override func viewDidLayoutSubviews() {
         
 //        if self.keyboardIsShowing {
