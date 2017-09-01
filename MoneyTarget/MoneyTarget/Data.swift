@@ -33,7 +33,7 @@ class AppData {
           print("Could not select settings")
         }
     }
-    
+
     func saveSettings(settings: Settings) {
         if let savedSettings = self.settings {
             savedSettings.daysWorkedPerWeek = settings.daysWorkedPerWeek
