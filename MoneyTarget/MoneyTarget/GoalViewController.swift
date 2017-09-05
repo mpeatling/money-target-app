@@ -83,14 +83,10 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let settingsEntity = Settings(context: self.context)
         if let goalAmount = self.goalAmountTextBox.text, let goalAmountDouble = Double(goalAmount) {
-            settingsEntity.goalAmount = goalAmountDouble
+            UserDefaults().set(goalAmountDouble, forKey: "com.mattpeatling.moneytarget.goalAmount")
         }
-        settingsEntity.finishDate = self.selectedDate as? NSDate
-        
-        let nextVC = segue.destination as! InformationViewController
-            nextVC.settingsEntity = settingsEntity
+        UserDefaults().set(self.selectedDate, forKey: "com.mattpeatling.moneytarget.finishDate")
     }
 
 }

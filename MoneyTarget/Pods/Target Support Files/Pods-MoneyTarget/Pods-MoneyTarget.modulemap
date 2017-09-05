@@ -1,0 +1,6 @@
+framework module Pods_MoneyTarget {
+  umbrella header "Pods-MoneyTarget-umbrella.h"
+
+  export *
+  module * { export * }
+}

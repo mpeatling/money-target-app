@@ -17,7 +17,7 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
     var totalGoalAmount:Double = 1000
     var finishDate = Date()
     var tips:Array<Double> = []
-    var totalTipsSavedToDate:Double = 200
+    var totalTipsSavedToDate:Double = 0
     var totalDaysRemaining = 0
     var tipsNeededPerShift:Double = 0
     var daysWorkedPerWeek = 5
@@ -28,6 +28,27 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
         self.getUpdatedGoalAmount()
         self.getDaysRemaining()
         self.getTipAmountNeededPerShift()
+        
+        let tip1 = Tip()
+        tip1.date = Date()
+        tip1.earned = 150
+        tip1.saved = 75
+        
+        let tip2 = Tip()
+        tip2.date = Date()
+        tip2.earned = 100
+        tip2.saved = 50
+        
+        var tipArray: [Tip] = []
+        tipArray.append(tip1)
+        tipArray.append(tip2)
+        
+        UserDefaults().set(tipArray, forKey: "com.mattpeatling.moneytarget.tips")
+        var newTipArray = UserDefaults().data(forKey: "com.mattpeatling.moneytarget.tips") as! [Tip]
+        for tip in newTipArray {
+            print(tip)
+        }
+        
     }
 
     func doneButtonTapped(textField: UIToolbarTextField) {
@@ -61,14 +82,9 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
     }
     
     func getData() {
-        let appData = AppData()
-        if let settings = appData.settings {
-            print(settings)
-            self.finishDate = settings.finishDate as! Date
-            self.daysWorkedPerWeek = settings.daysWorkedPerWeek.hashValue
-            self.totalGoalAmount = settings.goalAmount
-        }
-        
+        self.finishDate = UserDefaults().object(forKey: "com.mattpeatling.moneytarget.finishDate") as! Date
+        self.daysWorkedPerWeek = UserDefaults().integer(forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
+        self.totalGoalAmount = UserDefaults().double(forKey: "com.mattpeatling.moneytarget.goalAmount")
     }
 
     

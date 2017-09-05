@@ -10,7 +10,6 @@
 		3C38431DDCE083904C8EBA90 /* Pods_MoneyTargetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFBE42AD0A4E987920E9679 /* Pods_MoneyTargetUITests.framework */; };
 		5F48EF67CF46D696D8E094A4 /* Pods_MoneyTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD34AFCE69AA76FDB8B00D98 /* Pods_MoneyTarget.framework */; };
 		95500F5B8D2C2361E369B493 /* Pods_MoneyTargetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324EBF02960F20A6ECDD052 /* Pods_MoneyTargetTests.framework */; };
-		B6083CFC1F560F0900892F6C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6083CFB1F560F0900892F6C /* Data.swift */; };
 		B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */; };
 		B60DD9841F462E2B00B614DE /* UIToolbarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DD9831F462E2B00B614DE /* UIToolbarTextField.swift */; };
 		B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */; };
@@ -22,6 +21,7 @@
 		B61E3DC91F3CBE9D0039DFE7 /* MoneyTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DC81F3CBE9D0039DFE7 /* MoneyTargetTests.swift */; };
 		B61E3DD41F3CBE9D0039DFE7 /* MoneyTargetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DD31F3CBE9D0039DFE7 /* MoneyTargetUITests.swift */; };
 		B61E3DE21F3CC3CA0039DFE7 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */; };
+		B6D2C05D1F5F5BF5005B61BB /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2C05C1F5F5BF5005B61BB /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		51FC440ED184DD7D9394B3AB /* Pods-MoneyTarget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTarget.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyTarget/Pods-MoneyTarget.release.xcconfig"; sourceTree = "<group>"; };
 		8D8E62E58CFA98B3BF3135A8 /* Pods-MoneyTargetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTargetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyTargetUITests/Pods-MoneyTargetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD34AFCE69AA76FDB8B00D98 /* Pods_MoneyTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6083CFB1F560F0900892F6C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B60DD9811F4560BA00B614DE /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		B60DD9831F462E2B00B614DE /* UIToolbarTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbarTextField.swift; sourceTree = "<group>"; };
 		B61E3DAD1F3CBE9D0039DFE7 /* MoneyTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +65,7 @@
 		B61E3DD31F3CBE9D0039DFE7 /* MoneyTargetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTargetUITests.swift; sourceTree = "<group>"; };
 		B61E3DD51F3CBE9D0039DFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		B6D2C05C1F5F5BF5005B61BB /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		C324EBF02960F20A6ECDD052 /* Pods_MoneyTargetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyTargetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69155FF38BEC042E6720F06 /* Pods-MoneyTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTarget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyTarget/Pods-MoneyTarget.debug.xcconfig"; sourceTree = "<group>"; };
 		FFFBE42AD0A4E987920E9679 /* Pods_MoneyTargetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyTargetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +137,8 @@
 		B61E3DAF1F3CBE9D0039DFE7 /* MoneyTarget */ = {
 			isa = PBXGroup;
 			children = (
+				B6D2C05C1F5F5BF5005B61BB /* Tip.swift */,
 				B6DB95311F4635BF006AE19A /* Custom Controls */,
-				B6083CFB1F560F0900892F6C /* Data.swift */,
 				B61E3DB01F3CBE9D0039DFE7 /* AppDelegate.swift */,
 				B61E3DB21F3CBE9D0039DFE7 /* GoalViewController.swift */,
 				B61E3DE11F3CC3CA0039DFE7 /* InformationViewController.swift */,
@@ -486,10 +486,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6083CFC1F560F0900892F6C /* Data.swift in Sources */,
 				B60DD9821F4560BA00B614DE /* ProfilePageViewController.swift in Sources */,
 				B60DD9841F462E2B00B614DE /* UIToolbarTextField.swift in Sources */,
 				B61E3DB91F3CBE9D0039DFE7 /* MoneyTarget.xcdatamodeld in Sources */,
+				B6D2C05D1F5F5BF5005B61BB /* Tip.swift in Sources */,
 				B61E3DB31F3CBE9D0039DFE7 /* GoalViewController.swift in Sources */,
 				B61E3DB11F3CBE9D0039DFE7 /* AppDelegate.swift in Sources */,
 				B61E3DE21F3CC3CA0039DFE7 /* InformationViewController.swift in Sources */,

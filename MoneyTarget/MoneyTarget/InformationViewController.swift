@@ -16,10 +16,6 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var numberOfDaysWorkedTextBox: UIToolbarTextField!
     @IBOutlet weak var informationOnAmountsToEnterLabel: UILabel!
     @IBOutlet weak var nextButton: UIBarButtonItem!
- 
-    
-    var keyboardIsShowing = false
-    var settingsEntity: Settings!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,12 +74,7 @@ class InformationViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let daysWorked = self.numberOfDaysWorkedTextBox.text, let daysWorkedInt = Int16(daysWorked) {
-            self.settingsEntity.daysWorkedPerWeek = daysWorkedInt
+            UserDefaults().set(daysWorkedInt, forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
         }
-        self.settingsEntity.id = 1
-        
-        let appData = AppData()
-        appData.saveSettings(settings: self.settingsEntity)
-        print(appData.settings)
     }
 }
