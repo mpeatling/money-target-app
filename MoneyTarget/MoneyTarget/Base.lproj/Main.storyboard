@@ -311,7 +311,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-3N-Im2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-3N-Im2">
                                         <rect key="frame" x="94" y="443.5" width="62" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="IZT-Ec-lOk"/>
@@ -424,6 +424,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f1u-DF-esi"/>
                     <connections>
+                        <outlet property="daysRemainingLabel" destination="1U3-3N-Im2" id="gP7-j3-YhM"/>
                         <outlet property="dollarAmountNeededPerShiftLabel" destination="gJ1-pB-weS" id="Riu-gg-gDf"/>
                         <outlet property="goalAmountLabel" destination="ICy-a2-TuB" id="1SV-wA-qmT"/>
                     </connections>

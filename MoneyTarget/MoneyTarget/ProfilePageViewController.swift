@@ -11,44 +11,66 @@ import UIKit
 class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, UITextFieldDelegate {
     @IBOutlet weak var goalAmountLabel: UILabel!
     @IBOutlet weak var dollarAmountNeededPerShiftLabel: UILabel!
+    @IBOutlet weak var daysRemainingLabel: UILabel!
     
     var tipsSavedToday:Double = 0.0
-	//var currentDate = ""
-    var totalGoalAmount:Double = 0.0
-    //var finishDate = ""
-    var totalTipsSavedToDate:Array<Double> = []
+    var totalGoalAmount:Double = 1000
+    var finishDate = Date()
+    var tips:Array<Double> = []
+    var totalTipsSavedToDate:Double = 200
+    var totalDaysRemaining = 0
+    var tipsNeededPerShift:Double = 0
+    var daysWorkedPerWeek = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        // Do any additional setup after loading the view.
+        self.getData()
+        self.getUpdatedGoalAmount()
+        self.getDaysRemaining()
+        self.getTipAmountNeededPerShift()
     }
 
     func doneButtonTapped(textField: UIToolbarTextField) {
         
     }
 
-    func updatedGoalAmount() {
-      // This app will run everytime the app is opened || everytime the viewDidAppear
-      //  var updatedGoalAmount = self.totalGoalAmount - self.totalTipsSavedToDate
+    func getUpdatedGoalAmount() {
+        print("Im next")
+//        This app will run everytime the app is opened || everytime the viewDidAppear
+        let updatedGoalAmount = self.totalGoalAmount - self.totalTipsSavedToDate
+        self.goalAmountLabel.text = String(updatedGoalAmount)
     }
     
-    func tipAmountNeededPerShift(goalAmount: Double, daysRemaining: Double ) {
+    func getTipAmountNeededPerShift() {
         // This app will run everytime the app is opened || everytime the viewDidAppear
-        // let tipsNeededPerShift = goalAmount / daysRemaining
-        
+        let workDaysRemaining = (self.totalDaysRemaining / 7) * self.daysWorkedPerWeek
+        let rawTipsNeeded = (self.totalGoalAmount / Double(workDaysRemaining))
+        self.tipsNeededPerShift = Double(round(100 * rawTipsNeeded) / 100)
+        self.dollarAmountNeededPerShiftLabel.text = String(self.tipsNeededPerShift)
     }
     
     func getDaysRemaining() {
-//        This function will run everytime the app is opened.
-//        let calendar = NSCalendar.current
-//        // Replace the hour (time) of both dates with 00:00
-//        let currentDate = calendar
-//        let finishDate = calendar.finishDate( where the actual finishDate has been stored)
-//
-//        let flags = NSCalendar.Unit.day
-//        let daysRemaining = calendar.components(flags, fromDate: date1, toDate: date2, options: [])
+        let calendar = NSCalendar.current
+        if let date1 = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: Date())), let date2 = calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: self.finishDate)) {
+            let components = calendar.dateComponents([.day], from: date1, to: date2)
+            if let remainingDays = components.day {
+                self.totalDaysRemaining = remainingDays
+                self.daysRemainingLabel.text = String(remainingDays)
+            }
+        }
     }
+    
+    func getData() {
+        let appData = AppData()
+        if let settings = appData.settings {
+            print(settings)
+            self.finishDate = settings.finishDate as! Date
+            self.daysWorkedPerWeek = settings.daysWorkedPerWeek.hashValue
+            self.totalGoalAmount = settings.goalAmount
+        }
+        
+    }
+
     
     func getTotalTipsSavedToDate() {
 //        This function will run everytime the app starts || the page is refreshed || new tips have been saved
@@ -59,7 +81,7 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
     }
     
     func saveTipsSavedToday() {
-//        this amount will come straight from the user input once they have picked an amount that they want to save and click the           "Save Button" this function will run
+//        this amount will come straight from the user input once they have picked an amount that they want to save and click the "Save Button" this function will run
 //        let todayTips = something along the lines of Double(self.dailyTipAmountTextfield.text)
     }
 

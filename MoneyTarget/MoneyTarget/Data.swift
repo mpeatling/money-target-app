@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
+
 class AppData {
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -49,17 +50,12 @@ class AppData {
     }
     
 //    func deleteSettings() {
-//        for settings in self.settings {
-//            self.context.delete(settings)
-//        }
-//
+//       let fetchRequest = NSFetchRequest(entityName: "Settings")
+//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//        
 //        do {
-//            try self.context.save()
-//        } catch {
-//            print("Could not delete settings")
+//            try NSManagedObjectContext
 //        }
-//
-//        print("delete")
 //    }
     
 }

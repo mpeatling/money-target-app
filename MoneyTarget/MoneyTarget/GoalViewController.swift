@@ -30,6 +30,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UIToolbarTextFi
    
     override func viewDidAppear(_ animated: Bool) {
         self.goalAmountTextBox.becomeFirstResponder()
+        print("user",appDelegate.uid)
     }
     
     func setupDesign() {
