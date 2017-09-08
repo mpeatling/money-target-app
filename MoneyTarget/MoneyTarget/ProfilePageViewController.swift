@@ -29,26 +29,25 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
         self.getDaysRemaining()
         self.getTipAmountNeededPerShift()
         
-        let tip1 = Tip()
-        tip1.date = Date()
-        tip1.earned = 150
-        tip1.saved = 75
-        
-        let tip2 = Tip()
-        tip2.date = Date()
-        tip2.earned = 100
-        tip2.saved = 50
-        
+        let tip1 = Tip(earned: 150, saved: 75, date: Date())
+        let tip2 = Tip(earned: 100, saved: 50, date: Date())
+    
         var tipArray: [Tip] = []
         tipArray.append(tip1)
         tipArray.append(tip2)
+       
+        let archivedData = NSKeyedArchiver.archivedData(withRootObject: tipArray) as NSData
+        UserDefaults.standard.set(archivedData, forKey: "com.mattpeatling.moneytarget.tip")
+        UserDefaults.standard.synchronize()
         
-        UserDefaults().set(tipArray, forKey: "com.mattpeatling.moneytarget.tips")
-        var newTipArray = UserDefaults().data(forKey: "com.mattpeatling.moneytarget.tips") as! [Tip]
-        for tip in newTipArray {
-            print(tip)
+        if let dataObject = UserDefaults.standard.object(forKey: "com.mattpeatling.moneytarget.tip") as? NSData {
+           
+            if let unarchivedTipArray = NSKeyedUnarchiver.unarchiveObject(with: dataObject as Data) as? [Tip] {
+                for tip in unarchivedTipArray {
+                    print(tip.earned)
+                }
+            }
         }
-        
     }
 
     func doneButtonTapped(textField: UIToolbarTextField) {
@@ -56,9 +55,8 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
     }
 
     func getUpdatedGoalAmount() {
-        print("Im next")
-//        This app will run everytime the app is opened || everytime the viewDidAppear
-        let updatedGoalAmount = self.totalGoalAmount - self.totalTipsSavedToDate
+//  This app will run everytime the app is opened || everytime the viewDidAppear
+    let updatedGoalAmount = self.totalGoalAmount - self.totalTipsSavedToDate
         self.goalAmountLabel.text = String(updatedGoalAmount)
     }
     
@@ -82,9 +80,25 @@ class ProfilePageViewController: UIViewController, UIToolbarTextFieldDelegate, U
     }
     
     func getData() {
-        self.finishDate = UserDefaults().object(forKey: "com.mattpeatling.moneytarget.finishDate") as! Date
-        self.daysWorkedPerWeek = UserDefaults().integer(forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
-        self.totalGoalAmount = UserDefaults().double(forKey: "com.mattpeatling.moneytarget.goalAmount")
+        var finishDate = Date()
+        var daysWorkedPerWeek = 5
+        var totalGoalAmount: Double = 1000
+        
+        if UserDefaults.standard.object(forKey: "com.mattpeatling.moneytarget.finishDate") != nil {
+            finishDate = UserDefaults().object(forKey: "com.mattpeatling.moneytarget.finishDate") as! Date
+        }
+       
+        if UserDefaults.standard.object(forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek") != nil {
+            daysWorkedPerWeek = UserDefaults().integer(forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
+        }
+        
+        if UserDefaults.standard.object(forKey: "com.mattpeatling.moneytarget.goalAmount") != nil {
+            totalGoalAmount = UserDefaults().double(forKey: "com.mattpeatling.moneytarget.goalAmount")
+        }
+
+        self.finishDate = finishDate
+        self.daysWorkedPerWeek = daysWorkedPerWeek
+        self.totalGoalAmount = totalGoalAmount
     }
 
     

@@ -74,7 +74,7 @@ class InformationViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let daysWorked = self.numberOfDaysWorkedTextBox.text, let daysWorkedInt = Int16(daysWorked) {
-            UserDefaults().set(daysWorkedInt, forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
+            UserDefaults.standard.set(daysWorkedInt, forKey: "com.mattpeatling.moneytarget.daysWorkedPerWeek")
         }
     }
 }
